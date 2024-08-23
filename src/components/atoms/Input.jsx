@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 
+const PauseInput = styled.input`
+    width: 400px;
+    height: 50px;
+    font-size: 110%;
+    padding: 3px 6px;
+    text-decoration-line: none
+`
+
 export const Input = ({name}) => {
-    const input = styled.input`
-        
-    `
     const dispatch = useDispatch();
     const inputValue = (e) => {
         switch(e.target.name) {
@@ -28,5 +33,6 @@ export const Input = ({name}) => {
         }
     }
 
-    return <input type="text" name={name} onChange={inputValue} />
+
+    return <PauseInput type="text" name={name} onChange={inputValue} spellCheck={false} />
 }
